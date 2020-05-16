@@ -1,0 +1,38 @@
+Data for q1.txt:
+adjacency/cost matrix:
+   0   1   0   0   0   1   0   1
+   1   0   1   0   0   1   0   0
+   0   1   0   1   1   0   0   0
+   0   0   1   0   1   0   1   0
+   0   0   1   1   0   1   0   0
+   1   1   0   0   1   0   1   1
+   0   0   0   1   0   1   0   0
+   1   0   0   0   0   1   0   0
+R matrix
+  1  1  1  1  1  1  1  1
+  1  1  1  1  1  1  1  1
+  1  1  1  1  1  1  1  1
+  1  1  1  1  1  1  1  1
+  1  1  1  1  1  1  1  1
+  1  1  1  1  1  1  1  1
+  1  1  1  1  1  1  1  1
+  1  1  1  1  1  1  1  1
+Q matrix
+  1  1  1  1  1  1  1  1
+  1  1  1  1  1  1  1  1
+  1  1  1  1  1  1  1  1
+  1  1  1  1  1  1  1  1
+  1  1  1  1  1  1  1  1
+  1  1  1  1  1  1  1  1
+  1  1  1  1  1  1  1  1
+  1  1  1  1  1  1  1  1
+  basis: (choose one from within the []):
+[  1  2  3  4  5  6  7  8]
+  contrabasis: (choose one from within the []):
+[  1  2  3  4  5  6  7  8]
+strong components:
+[  1  2  3  4  5  6  7  8]
+Depth first search starting with vertex 1:
+1 --> 2 --> 3 --> 4 --> 5 --> 6 --> 7
+1 --> 8
+number of spanning trees = 247
