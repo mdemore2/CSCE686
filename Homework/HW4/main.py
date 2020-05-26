@@ -8,12 +8,13 @@ def bk(graph, P, R=set(), X=set()):
     bk.count += 1
     if not any((P, X)):
         yield R
-    for node in P.copy():
-        for r in bk(graph, P.intersection(graph.neighbors(node)),
-                    R=R.union(set([node])), X=X.intersection(graph.neighbors(node))):
-            yield r
-        P.remove(node)
-        X.add(node)
+    else:
+        for node in P.copy():
+            for r in bk(graph, P.intersection(graph.neighbors(node)),
+                        R=R.union(set([node])), X=X.intersection(graph.neighbors(node))):
+                yield r
+            P.remove(node)
+            X.add(node)
 
 
 def bk_pivot(graph, P, R=set(), X=set()):
@@ -69,14 +70,17 @@ if __name__ == '__main__':
     print("Bron-Kerbosch Backtracking:")
     for max_clique in bk(graph, set(graph.nodes)):
         print(max_clique)
+    print("Recursive calls: " + str(bk.count))
 
     bk_pivot.count = 0
     print("Bron-Kerbosch Pivot:")
     for max_clique in bk_pivot(graph, set(graph.nodes)):
         print(max_clique)
+    print("Recursive calls: " + str(bk_pivot.count))
 
     bk_order_pivot.count = 0
     print("Bron-Kerbosch Order:")
     for max_clique in bk_order(graph, set(nx.algorithms.coloring.strategy_largest_first(graph, 1))):
         print(max_clique)
+    print("Recursive calls: " + str(bk_order_pivot.count))
 
