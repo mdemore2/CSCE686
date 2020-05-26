@@ -78,6 +78,10 @@ def run_test():
                 graph = nx.path_graph(size)
             else:
                 graph = nx.wheel_graph(size)
+
+            graph_o = graph
+            graph = nx.complement(graph)
+
             bk_list = list()
             bk.count = 0
             start = timer()
@@ -103,7 +107,7 @@ def run_test():
             order_time = end - start
             to_add = pd.DataFrame({'Size': [size],
                                    'Type': [type],
-                                   'Graph': [graph],
+                                   'Graph': [graph_o],
                                    'BK Calls': [bk.count],
                                    'BK Time': [bk_time],
                                    'BK MIS': [bk_list],
