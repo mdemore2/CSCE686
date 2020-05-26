@@ -65,7 +65,7 @@ def run_test():
     results = pd.DataFrame()
 
     size_l = (10, 20, 30)
-    type_l = ('Complete''Cycle', 'Star', 'Path', 'Wheel')
+    type_l = ('Complete', 'Cycle', 'Star', 'Path', 'Wheel')
     for type in type_l:
         for size in size_l:
             if type == 'Complete':
