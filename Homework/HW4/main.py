@@ -34,7 +34,7 @@ def bk_pivot(graph, P, R=set(), X=set()):
 def bk_order(graph, P, R=set(), X=set()):
     bk_order.count += 1
     for node in P.copy():
-        for r in bk_order(graph, P.intersection(graph.neighbors(node)),
+        for r in bk_pivot(graph, P.intersection(graph.neighbors(node)),
                           R=R.union(set([node])), X=X.intersection(graph.neighbors(node))):
             yield r
         P.remove(node)
