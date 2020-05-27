@@ -5,7 +5,7 @@ import random
 from timeit import default_timer as timer
 import pandas as pd
 from pandas.plotting import scatter_matrix
-
+import seaborn as sns
 
 def bk(graph, P, R=set(), X=set()):
     bk.count += 1
@@ -26,7 +26,6 @@ def bk_pivot(graph, P, R=set(), X=set()):
         yield R
     else:
         P_copy = P.copy()
-        # pivot = random.choice(list(P.union(X)))
         pivot = random.choice(list(P.union(X)))
         for node in P_copy.difference((graph.neighbors(pivot))):
             for r in bk_pivot(graph, P.intersection(graph.neighbors(node)),
@@ -43,7 +42,6 @@ def bk_order_pivot(graph, P, R=set(), X=set()):
     else:
         P_copy = P.copy()
         pivot = random.choice(list(P.union(X)))
-        # pivot = int(str(random.sample(P_copy, 1)))
         for node in P_copy.difference((graph.neighbors(pivot))):
             for r in bk_order_pivot(graph, P.intersection(graph.neighbors(node)),
                                     R=R.union(set([node])), X=X.intersection(graph.neighbors(node))):
@@ -105,6 +103,7 @@ def run_test():
                 order_list.append(clique)
             end = timer()
             order_time = end - start
+            
             to_add = pd.DataFrame({'Size': [size],
                                    'Type': [type],
                                    'Graph': [graph_o],
@@ -120,12 +119,24 @@ def run_test():
             results = results.append(to_add)
     return results
 
-
 def analyze(results):
-    print(results.head)
-    scatter_matrix(results)
+    #print(results.head)
+    #scatter_matrix(results)
+    
+    #results.plot.scatter(x='BK Time',y='Size',color='Blue',label='Bron-Kerbosch')
+    #plt.show()
+    #results.plot.scatter(x='Pivot Time',y='Size',color='Green',label='BK with Pivot')
+    #plt.show()
+    #results.plot.scatter(x='Order Time',y='Size',color='Red',label='BK with Ordering')
+    #plt.show()
+    
+    sns.pairplot(x_vars=["BK Time"], y_vars=["Size"], data=results, hue="Type", height=5, aspect=1.5)
     plt.show()
-
+    sns.pairplot(x_vars=["Pivot Time"], y_vars=["Size"], data=results, hue="Type", height=5, aspect=1.5)
+    plt.show()
+    sns.pairplot(x_vars=["Order Time"], y_vars=["Size"], data=results, hue="Type", height=5, aspect=1.5)
+    plt.show()
+    
 
 if __name__ == '__main__':
     results = run_test()
