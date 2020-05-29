@@ -177,23 +177,23 @@ largeSparse = [60, 3, 1, 1, 1]
 largeDense = [60, 6, 4, 1, 1]
 
 print(" Small:")
-print(repeatSCP(5, small))
+print(repeatSCP(100, small))
 updateStatus(" Small")
 
 print(" Medium :")
-print(repeatSCP(5, medium))
+print(repeatSCP(100, medium))
 updateStatus(" Medium ")
 
 print(" Largeu Sparse:")
-print(repeatSCP(5, largeSparse))
+print(repeatSCP(20, largeSparse))
 updateStatus(" Largeu Sparse")
 
 print(" Large:")
-print(repeatSCP(5, large))
+print(repeatSCP(20, large))
 updateStatus(" Large")
 
 print(" Largeu Dense:")
-print(repeatSCP(5, largeDense))
+print(repeatSCP(20, largeDense))
 updateStatus(" Largeu Dense")
 
 weightedLarge = [60, 5, 2, 1, 10]
@@ -201,13 +201,13 @@ weightedLargeSparse = [60, 3, 1, 1, 10]
 weightedLargeDense = [60, 6, 4, 1, 10]
 
 print(" Weighted u Largeu Sparse:")
-print(repeatSCP(5, weightedLargeSparse))
+print(repeatSCP(20, weightedLargeSparse))
 updateStatus(" Weighted u Largeu Sparse")
 
 print(" Weighted u Large:")
-print(repeatSCP(5, weightedLarge))
+print(repeatSCP(20, weightedLarge))
 updateStatus(" Large")
 
 print(" Weighted u Largeu Dense:")
-print(repeatSCP(5, weightedLargeDense))
+print(repeatSCP(20, weightedLargeDense))
 updateStatus(" Weighted u Largeu Dense")
