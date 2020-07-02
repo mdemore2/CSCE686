@@ -1,0 +1,989 @@
+%% bare_jrnl.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% see http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% journal paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+
+
+\documentclass[journal]{IEEEtran}
+\usepackage{textcomp}
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[journal]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+
+
+%\ifCLASSOPTIONcaptionsoff
+%  \usepackage[nomarkers]{endfloat}
+% \let\MYoriglatexcaption\caption
+% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
+%\fi
+% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and 
+% Axel Sommerfeldt. This package may be useful when used in conjunction with 
+% IEEEtran.cls'  captionsoff option. Some IEEE journals/societies require that
+% submissions have lists of figures/tables at the end of the paper and that
+% figures/tables without any captions are placed on a page by themselves at
+% the end of the document. If needed, the draftcls IEEEtran class option or
+% \CLASSINPUTbaselinestretch interface can be used to increase the line
+% spacing as well. Be sure and use the nomarkers option of endfloat to
+% prevent endfloat from "marking" where the figures would have been placed
+% in the text. The two hack lines of code above are a slight modification of
+% that suggested by in the endfloat docs (section 8.4.1) to ensure that
+% the full captions always appear in the list of figures/tables - even if
+% the user used the short optional argument of \caption[]{}.
+% IEEE papers do not typically make use of \caption[]'s optional argument,
+% so this should not be an issue. A similar trick can be used to disable
+% captions of packages such as subfig.sty that lack options to turn off
+% the subcaptions:
+% For subfig.sty:
+% \let\MYorigsubfloat\subfloat
+% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
+% However, the above trick will not work if both optional arguments of
+% the \subfloat command are used. Furthermore, there needs to be a
+% description of each subfigure *somewhere* and endfloat does not add
+% subfigure captions to its list of figures. Thus, the best approach is to
+% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
+% and instead reference/explain all the subfigures within the main caption.
+% The latest version of endfloat.sty and its documentation can obtained at:
+% http://www.ctan.org/pkg/endfloat
+%
+% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
+% later in the document, say, to conditionally put the References on a 
+% page by themselves.
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Algorithmic Design for a\\ Doubly NP-Complete Problem}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+
+\author{Mark Demore, 2d Lt}
+
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2015}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2015 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+
+
+
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+% The very first letter is a 2 line initial drop letter followed
+% by the rest of the first word in caps.
+% 
+% form to use if the first word consists of a single letter:
+% \IEEEPARstart{A}{demo} file is ....
+% 
+% form to use if you need the single drop letter followed by
+% normal text (unknown if ever used by the IEEE):
+% \IEEEPARstart{A}{}demo file is ....
+% 
+% Some journals put the first two words in caps:
+% \IEEEPARstart{T}{his demo} file is ....
+% 
+% Here we have the typical use of a "T" for an initial drop letter
+% and "HIS" in caps to complete the first word.
+\IEEEPARstart{T}{he} United States Air Force core mission set includes the transportation of troops, supplies and other assets. This task presents a complex logistics problem. Namely, what is the optimal load for each aircraft, and what is the optimal route for each aircraft to take? These questions are remarkably similar to the knapsack and vehicle routing problems, two notorious NP-Complete problems. An efficient algorithm which can solve this dilemma in tandem would be of great benefit to the USAF. Both a deterministic and stochastic approach to developing an algorithm would be insightful. A clear definition of this problem and two potential algorithmic solutions follow.
+
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that the IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a 
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% the IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively. 
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+
+
+
+
+\section{Problem Statement}
+\tab A real world problem that incorporates two different NP-Complete problem models is a airlift scheduling program for Air Mobility Command. While there are certainly many other considerations in the actual application of such a program, it can be simplified to a combination of the Knapsack problem and the Vehicle Routing problem. For example, the knapsack problem can be used to determine how to load the planes, maximizing the value of cargo that can fit in each aircraft, and the vehicle routing problem can be used to determine the order in which to drop off the cargo.\par
+
+The Knapsack Problem can be defined as:\par
+
+Let \textit{S} be a set of \textit{n} items, each with a weight \textit{w\textsubscript{i}} and a value \textit{v\textsubscript{i}}, and paired with a maximum cargo weight \textit{W}. Constraints:  \(  \sum _{i=1}^{n}w_{i}  \leq W \) . Objective: maximize value.\par
+
+The Vehicle Routing Problem can be defined as:\par
+
+Let \textit{G} = (\textit{V}, \textit{A}) be a graph where \textit{V} = $ \{ $ 1, $ \ldots $ , \textit{n}$ \} $  is a set of vertices representing air drop locations with the airfield located at vertex 1, and \textit{A} is the set of arcs. With every arc (\textit{i, j}) \textit{i} =/=\textit{j} is associated a non-negative cost matrix \textit{C} = (\textit{c\textsubscript{ij}}). Constraints: (i) each air drop in \textit{V}$\textbackslash$ $ \{ $ 1$ \} $  is visited exactly once by exactly one plane; (ii) all flight plans start and end at the airfield. Objective: minimize cost.\par
+
+These problems can be combined in this context as:\par
+
+Let \textit{G} = (\textit{V}, \textit{A}) be a graph where \textit{V} = $ \{ $ 1, $ \ldots $ , \textit{n}$ \} $  is a set of vertices representing air drop locations with the airfield located at vertex 1, and \textit{A} is the set of arcs between them. Every arc (\textit{i, j}) \textit{i} =/=\textit{j} is associated a non-negative cost matrix \textit{C} = (\textit{c\textsubscript{ij}}). Let each vertex be assigned a set \textit{S},\textit{ }of \textit{n} items, each with a weight \textit{w\textsubscript{i}} and a value \textit{v\textsubscript{i}}. Let P be a set of planes, each with a maximum cargo weight \textit{W\textsubscript{i}}. Constraints:  (i) each air drop in \textit{V}$\textbackslash$ $ \{ $ 1$ \} $  is visited exactly once by exactly one plane; (ii) all flight plans start and end at the airfield; (iii)  \(  \sum _{i=1}^{n}w_{i}  \leq W_{P} \) . Objective: maximize total value and minimize total cost across all flight plans.\par
+
+\tab The search landscape for these problems entail computing the knapsack problem and the vehicle routing problem for each aircraft, for each combination of airdrop locations and of items at each location. A heuristic will need to be implemented to determine the tradeoff balance between the two objectives of minimizing cost and maximizing value and also for prioritizing which planes (if they are of varying cargo capacity) should be planned first.\par
+
+\textit{D\textsubscript{i}}: G = graph of vertices of air drop locations and arcs, C = cost matrix for each arc, P = set of available aircraft, S = set of items needed at each location\par
+
+\textit{D\textsubscript{o}}: R = set of sets of routes for each plane, L = set of sets of loads for each plane\par
+
+
+
+
+
+\section{Deterministic Algorithm Design}
+
+\setlength{\parskip}{18.12pt}
+\textbf{Problem Domain Requirements Specification form:}\par
+
+\setlength{\parskip}{8.04pt}
+- domains, D \par
+
+\tab input D\textsubscript{i }- Graph G(X,$ \Gamma $ ), X:locations. $ \Gamma $ : weighted vertex link set (cost); Set S(W,V), W: item weight, V: item value\par
+
+\tab output D\textsubscript{o }– Set of sets(R,L), R:route for each plane, L: load for each plane\par
+
+- I(x); input conditions on input domain satisﬁed; x in X, link in $ \Gamma $ , set S \par
+
+- O(x,z); output conditions on output/input domain satisﬁed; i.e., \par
+
+\setlength{\parskip}{18.12pt}
+\tab a feasible/optimal solution with respect to the input domain \\
+-- all x assigned\\
+-- max V (total value)\par
+
+-- no \textit{w\textsubscript{p}  }$>$ W (max weight)\\
+-- min C (total cost)\  \par
+
+\setlength{\parskip}{8.04pt}
+\textbf{Problem Domain/Algorithm Domain Integration Specification\\
+}\par
+
+\begin{itemize}
+	\item \textbf{Basic search constructs} for A$\ast$ \par
+
+ \par
+
+\begin{itemize}
+	\item \textit{next-state-generator} (D\textsubscript{i}) \textrightarrow x in X; I(x) \par
+
+	\item \textit{selection} (D\textsubscript{i}) \textrightarrow x; x in X \par
+
+	\item \textit{feasibility} (x, D\textsubscript{p}) \textrightarrow boolean\par
+
+	\item \textit{solution} O(x,z) $``$maximal $``$; (D\textsubscript{p}) \textrightarrow boolean; z = D\textsubscript{p}, i.e., can no longer \\
+\ \ \ \ \ \ \ \ \ \ \ \ \  augment S with an x in X; \par
+
+	\item \textit{objective (}D\textsubscript{p}\textit{) \textrightarrow }D\textsubscript{o }\textit{optimal assignment of all locations}
+\end{itemize}\par
+
+	\item imports:\  ADT( set, set-of-sets):D\textsubscript{i} D\textsubscript{p }D\textsubscript{o}; Boolean; integer
+\end{itemize}\par
+
+\vspace{\baselineskip}
+\setlength{\parskip}{0.0pt}
+\textbf{\textit{algorithm domain requirements speciﬁcation form:}}\par
+
+\textit{$\bullet$  name:  A$\ast$   (Di,  Do)}\par
+
+\textit{$\bullet$  domains:  Di\   is set-of-candidates,}\par
+
+\textit{Do are sets of solutions (solution space of subsets)}\par
+
+\textit{$\bullet$  operations:}\par
+
+\textit{I(x); x in Di; x is a possible candidate from input set}\par
+
+\textit{O(x, z); x in Di, z in Do; z is a satisfying solution\textbf{ }}\par
+
+\vspace{\baselineskip}
+\textbf{\textit{algorithm domain design speciﬁcation form:}}\par
+
+\textit{$\bullet$  name:  A$\ast$  (Di, Do)}\par
+
+\textit{$\bullet$  domains:  Di\   is set-of-candidates, Do are the sets of solutions, Dp\   is set of partial solutions (one plane’s route and load)}\par
+
+\textit{$\bullet$  imports:  ADT set, list, queue, real/integer/character}\par
+
+\textit{$\bullet$  operations:}1\par
+
+\textit{I(x); x in Di}\par
+
+\textit{O(x, z); x in Di, z in Do;}\par
+\textit{$``$condition on z being a satisfying solution$"$ }\par
+\textit{I’(x, y); x in Di, y in Dp; condition on y being a partial solution in Dp}\par
+\textit{Dp is the $``$open$"$  list; Dc is the $"$ closed$"$  list}\par
+\textbf{–  }\textit{deﬁne state}\par
+\textbf{–  \textit{{next-state-generator}}}\p
+\textit{i)  \textbf{{selection}} of a partial solution y in Dp based upon its superiority and put in Dc and delete from Dp}\par
+\begin{justify}
+\textit{$``$based upon heuristic cost function$"$ }
+\end{justify}\par
+\textit{ii)  \textbf{{Generation}} of all} \textit{next states xj of y}\par
+\textbf{–  \textit{{feasibility}}}\textit{ (xj, y) \textrightarrow boolean [if true union (xj , y) and put result} \textit{in} \textit{Dp]}\par
+\textbf{–  \textit{{solution}}}\textit{ (y) \textrightarrow boolean;  z = y;  delay termination  and ﬁnd  all}\par
+\begin{justify}
+\textit{$``$optimal$"$  solutions (if satisfying accept first solution)}
+\end{justify}\par
+\textbf{–  }\textit{objective solution (Dp) \textrightarrow $``$ordered set over Dp$"$ }\par
+
+\textbf{–  \textit{{heuristics }}}\textit{come from problem domain insight:}\par
+
+\textbf{\textit{{-- Attempt use PD next state generator to reduce set-of candidates}}{ \textit{ASAP}}}\par
+
+\textbf{\textit{{-- Attempt to generate a combination once and only once in combinatorial problem domain}}}\par
+
+\textbf{\textit{{-- Attempt to generate early pruning condition simple solution check}}}\par
+
+\vspace{\baselineskip}
+
+\textbf{\textit{algorithm domain intermediate speciﬁcation form: (iterative)}}\par
+
+\textit{$\bullet$  Heuristics: distance to next airdrop location, value of load item added}\par
+
+\textit{$\bullet$  Data structures: input – graph: set of nodes (locations), set of edge weight (cost between each location), set of items weight and value, set of planes with max weight; output – list of sets (route for each plane, and load for each plane)}\par
+
+\vspace{\baselineskip}
+
+\textbf{\textit{algorithm domain function speciﬁcation form:  (iterative)}}\par
+
+\textit{$\bullet$  }\  Function A$\ast$ (initial, Expand, Goal, Cost, Heuristic)\par
+
+\ \  q <- New-Priority-Queue()\par
+
+\ \  Insert (initial, q, Heuristic(initial))\par
+
+\ \  \textbf{while} q is not empty\par
+
+\ \ \ \ \ \  \textbf{do} current <- Extract-Min(q)\par
+
+\ \ \ \ \ \ \ \ \ \  \textbf{ if} Goal(current) then \textbf{return} solution\par
+
+\ \ \ \ \ \ \ \ \ \  \textbf{ for} each next in Expand(current)\par
+
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \textbf{do} Insert (next, q, Cost(next) + Heuristic(next))\par
+
+\ \ \ \  return failure\par
+
+
+\section{Stochastic Algorithm Design}
+\setlength{\parskip}{18.12pt}
+\textbf{\textit{Problem Domain Requirements Specification form:}}
+\par
+
+\setlength{\parskip}{8.04pt}
+- domains, D \par
+
+\tab input D\textsubscript{i }- Graph G(X,$ \Gamma $ ), X:locations. $ \Gamma $ : weighted vertex link set (cost); Set S(W,V), W: item weight, V: item value\par
+
+\tab output D\textsubscript{o }– Set of sets(R,L), R:route for each plane, L: load for each plane\par
+
+- I(x); input conditions on input domain satisﬁed; x in X, link in $ \Gamma $ , set S \par
+
+- O(x,z); output conditions on output/input domain satisﬁed; i.e., \par
+
+\setlength{\parskip}{18.12pt}
+
+\tab a feasible/optimal solution with respect to the input domain \\
+-- all x assigned\\
+-- max V (total value)\par
+
+-- no \textit{w\textsubscript{p} $>$ }W (max weight)\\
+--\ min C (total cost)  \par
+
+\vspace{\baselineskip}
+\setlength{\parskip}{8.04pt}
+\textbf{\textit{Algorithm domain requirements specification form:}}\par
+
+\begin{itemize}
+	\item Name: stochastic-search genetic algorithm\par
+
+	\item Domains: Ds is a set of satisfying solutions-a population; the population size n is the cardinality of Ds\par
+
+	\item Operations:
+\end{itemize}\par
+
+I(x); x in Ds; x is a possible solution from population\par
+
+O(x,z); x in Ds, z in Ds; z is a satisfying solution\par
+
+\textbf{\textit{Algorithm domain design specification form:}}\par
+
+\begin{itemize}
+	\item Name: stochastic-search-ga(Ds)\par
+
+	\item Domains: Di is set of algorithm-internal solutions, Ds is a set of satisfying solutions\par
+
+	\item Imports: ADT set, list, real/integer/character\par
+
+	\item Initialization of feasible solutions \textrightarrow Ds; Di empty\par
+
+	\item Operations I(x); x in Ds\par
+
+O(x,z); x in Ds, z in Ds; condition on z being a satisfying solution\par
+
+\begin{itemize}
+	\item Next-solution-generator \textrightarrow x for x in Ds, Ds\textrightarrowDi\par
+
+\begin{itemize}
+	\item Recombination(crossover) x\textrightarrowy with crossover probability\par
+
+	\item Mutation x\textrightarrowy with mutation probability\par
+
+	\item Feasibility(y) \textrightarrow Boolean [if true union(y,Di)] ‘genotype’\par
+
+\end{itemize}
+	\item Fitness/objective function mapping f(x) of each x in Di ‘phenotype’\par
+
+	\item Selection Di \textrightarrow Ds using f(x) as criteria, x in Di
+\end{itemize}\par
+
+	\item Axioms:
+\end{itemize}\par
+
+\textbf{\textit{Algorithm domain function specification form:}}\par
+
+\begin{itemize}
+	\item Function stochastic-search-ga(Ds)\par
+
+	\item Initial condition: generate feasible Dinitial \textrightarrow Ds, Di empty, pc, pm\par
+
+	\item Body\par
+
+\begin{itemize}
+	\item \begin{itemize}
+	\item While not time/generation termination do ss-ga loop:\par
+
+\begin{itemize}
+	\item Next-state solution/population Ds, Ds\textrightarrowDi; do for each x in Ds, size n\par
+
+\begin{itemize}
+	\item Crossover(x) = y with pc\par
+
+	\item Mutation(x) = y with pm\par
+
+	\item If feasibility(y) then union (y, Di) \textrightarrow Di\par
+
+\end{itemize}
+	\item Fitness calculation f(x) for each x in Di\par
+
+	\item Selection(di) \textrightarrow Ds based upon f(x), x in Di\par
+
+\end{itemize}
+	\item End ss-ga while loop\par
+
+	\item Find optimal z in Ds\par
+
+	\item END function
+\end{itemize}
+\end{itemize}
+\end{itemize}\par
+
+\setlength{\parskip}{0.0pt}
+
+\tab \textbf{\textit{algorithm domain intermediate speciﬁcation form: (iterative)}}\par
+
+\textit{$\bullet$  Heuristics: distance to next airdrop location, value of load item added}\par
+
+\textit{$\bullet$  Data structures: input – graph: set of nodes (locations), set of edge weight (cost between each location), set of items weight and value, set of planes with max weight; output – list of sets (route for each plane, and load for each plane)}\par
+
+\vspace{\baselineskip}
+
+\textbf{\textit{algorithm domain function speciﬁcation form:  (iterative)}}\par
+
+\textit{$\bullet$  }\  Function ss-ga(initial, Expand, Goal, Cost, Heuristic, crossover, mutation)\par
+
+\ \  q <- New-Priority-Queue()\par
+
+\ \  Insert (initial, q, Heuristic(initial))\par
+
+\ \  \textbf{while} generation limit not reached\par
+
+\ \ \ \ \ \  \textbf{do} current <- Extract-Min(q)\par
+
+\tab crossover(x) = y with pc\par
+
+\tab mutation(x) = y with pm\par
+
+\ \ \ \ \ \ \ \ \ \  \textbf{ if} Goal(current) then \textbf{return} solution\par
+
+\ \ \ \ \ \ \ \ \ \  \textbf{ for} each next in Expand(current)\par
+
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \textbf{do} Insert (next, q, Cost(next) + Heuristic(next))\par
+
+\ \ \ \  return failure\par
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{11}
+
+\bibitem{}
+\href{https://en.wikipedia.org/wiki/Knapsack_problem}
+
+\bibitem{}
+\href{https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/}
+
+\bibitem{}
+\href{https://medium.com/@fabianterh/how-to-solve-the-knapsack-problem-with-dynamic-programming-eb88c706d3cf}
+
+\bibitem{}
+\href{https://en.wikipedia.org/wiki/Vehicle_routing_problem}
+
+\bibitem{}
+\href{https://developers.google.com/optimization/routing/vrp}
+
+\bibitem{}
+\href{https://bib.irb.hr/datoteka/433524.Vehnicle\_Routing\_Problem.pdf}
+ 
+\bibitem{}
+\href{https://www.geophysik.uni-muenchen.de/~igel/downloads/inviigenetic.pdf}
+
+\bibitem{}
+\href{https://towardsdatascience.com/introduction-to-genetic-algorithms-including-example-code-e396e98d8bf3}
+
+\bibitem{}
+\href{https://en.wikipedia.org/wiki/Genetic_algorithm}
+ 
+\bibitem{}
+\href{http://www.cs.ucc.ie/~dgb/courses/tai/notes/handout12.pdf}
+
+\bibitem{}
+\href{https://www.mathworks.com/help/gads/what-is-the-genetic-algorithm.html}
+
+\end{thebibliography}
+
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+% that's all folks
+\end{document}
+
+

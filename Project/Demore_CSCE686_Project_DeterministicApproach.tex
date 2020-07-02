@@ -1,0 +1,412 @@
+%%%%%%%%%%%%  Generated using docx2latex.com  %%%%%%%%%%%%%%
+
+%%%%%%%%%%%%  v2.0.0-beta  %%%%%%%%%%%%%%
+
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage[normalem]{ulem}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{extarrows}
+\usepackage{graphicx}
+\usepackage[backend=biber,
+style=numeric,
+sorting=none,
+isbn=false,
+doi=false,
+url=false,
+]{biblatex}\addbibresource{bibliography.bib}
+
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{wasysym}
+\usepackage{enumitem}
+\usepackage{adjustbox}
+\usepackage{ragged2e}
+\usepackage[svgnames,table]{xcolor}
+\usepackage{tikz}
+\usepackage{longtable}
+\usepackage{changepage}
+\usepackage{setspace}
+\usepackage{hhline}
+\usepackage{multicol}
+\usepackage{tabto}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{fancyhdr}
+\usepackage[toc,page]{appendix}
+\usepackage[hidelinks]{hyperref}
+\usetikzlibrary{shapes.symbols,shapes.geometric,shadows,arrows.meta}
+\tikzset{>={Latex[width=1.5mm,length=2mm]}}
+\usepackage{flowchart}\usepackage[paperheight=11.0in,paperwidth=8.5in,left=1.0in,right=1.0in,top=1.0in,bottom=1.0in,headheight=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\TabPositions{0.5in,1.0in,1.5in,2.0in,2.5in,3.0in,3.5in,4.0in,4.5in,5.0in,5.5in,6.0in,}
+
+\urlstyle{same}
+
+\renewcommand{\_}{\kern-1.5pt\textunderscore\kern-1.5pt}
+
+ %%%%%%%%%%%%  Set Depths for Sections  %%%%%%%%%%%%%%
+
+% 1) Section
+% 1.1) SubSection
+% 1.1.1) SubSubSection
+% 1.1.1.1) Paragraph
+% 1.1.1.1.1) Subparagraph
+
+
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+
+ %%%%%%%%%%%%  Set Depths for Nested Lists created by \begin{enumerate}  %%%%%%%%%%%%%%
+
+
+\setlistdepth{9}
+\renewlist{enumerate}{enumerate}{9}
+		\setlist[enumerate,1]{label=\arabic*)}
+		\setlist[enumerate,2]{label=\alph*)}
+		\setlist[enumerate,3]{label=(\roman*)}
+		\setlist[enumerate,4]{label=(\arabic*)}
+		\setlist[enumerate,5]{label=(\Alph*)}
+		\setlist[enumerate,6]{label=(\Roman*)}
+		\setlist[enumerate,7]{label=\arabic*}
+		\setlist[enumerate,8]{label=\alph*}
+		\setlist[enumerate,9]{label=\roman*}
+
+\renewlist{itemize}{itemize}{9}
+		\setlist[itemize]{label=$\cdot$}
+		\setlist[itemize,1]{label=\textbullet}
+		\setlist[itemize,2]{label=$\circ$}
+		\setlist[itemize,3]{label=$\ast$}
+		\setlist[itemize,4]{label=$\dagger$}
+		\setlist[itemize,5]{label=$\triangleright$}
+		\setlist[itemize,6]{label=$\bigstar$}
+		\setlist[itemize,7]{label=$\blacklozenge$}
+		\setlist[itemize,8]{label=$\prime$}
+
+\setlength{\topsep}{0pt}\setlength{\parskip}{8.04pt}
+\setlength{\parindent}{0pt}
+
+ %%%%%%%%%%%%  This sets linespacing (verticle gap between Lines) Default=1 %%%%%%%%%%%%%%
+
+
+\renewcommand{\arraystretch}{1.3}
+
+
+%%%%%%%%%%%%%%%%%%%% Document code starts here %%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+\vspace{\baselineskip}
+Mark Demore, 2d Lt\par
+
+CSCE686 – Dr. Lamont\par
+
+Project - Deterministic Design\par
+
+\textbf{PROBLEM:}\par
+
+Let \textit{G} = (\textit{V}, \textit{A}) be a graph where \textit{V} = $ \{ $ 1, $ \ldots $ , \textit{n}$ \} $  is a set of vertices representing air drop locations with the airfield located at vertex 1, and \textit{A} is the set of arcs between them. Every arc (\textit{i, j}) \textit{i} =/=\textit{j} is associated a non-negative cost matrix \textit{C} = (\textit{c\textsubscript{ij}}). Let each vertex be assigned a set \textit{S},\textit{ }of \textit{n} items, each with a weight \textit{w\textsubscript{i}} and a value \textit{v\textsubscript{i}}. Let P be a set of planes, each with a maximum cargo weight \textit{W\textsubscript{i}}.\ Constraints:  (i) each air drop in \textit{V}$\textbackslash$ $ \{ $ 1$ \} $  is visited exactly once by exactly one plane; (ii) all flight plans start and end at the airfield; (iii)  \(  \sum _{i=1}^{n}w_{i}  \leq W_{P} \) . Objective: maximize total value and minimize total cost across all flight plans; \textit{max  \(  \sum _{i=1}^{n}v_{i} \) }, \textit{min  \(  \sum _{i=1}^{n}c_{i} \) }\par
+
+\setlength{\parskip}{18.12pt}
+\begin{adjustwidth}{0.0in}{-0.36in}
+\textbf{Problem Domain Requirements Specification form:}\par
+
+\end{adjustwidth}
+
+\setlength{\parskip}{8.04pt}
+\begin{adjustwidth}{0.64in}{0.0in}
+- domains, D \par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.64in}{0.0in}
+\tab input D\textsubscript{i }- Graph G(X,$ \Gamma $ ), X:locations. $ \Gamma $ : weighted vertex link set (cost); Set S(W,V), W: item weight, V: item value\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.64in}{0.0in}
+\tab output D\textsubscript{o }– Set of sets(R,L), R:route for each plane, L: load for each plane\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.64in}{0.0in}
+- I(x); input conditions on input domain satisﬁed; x in X, link in $ \Gamma $ , set S \par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.64in}{0.0in}
+- O(x,z); output conditions on output/input domain satisﬁed; i.e., \par
+
+\end{adjustwidth}
+
+\setlength{\parskip}{18.12pt}
+\begin{adjustwidth}{0.64in}{0.0in}
+\tab a feasible/optimal solution with respect to the input domain \\
+-- all x assigned\\
+-- max V (total value)\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.64in}{0.0in}
+-- no \textit{w\textsubscript{p} > }W (max weight)\\
+-- min C (total cost)\  \par
+
+\end{adjustwidth}
+
+\setlength{\parskip}{8.04pt}
+\begin{adjustwidth}{0.0in}{-0.11in}
+\textbf{Problem Domain/Algorithm Domain Integration Specification\\
+}\par
+
+\end{adjustwidth}
+
+\begin{itemize}
+	\item \textbf{Basic search constructs} for A$\ast$ \par
+
+ \par
+
+\begin{itemize}
+	\item \textit{next-state-generator} (D\textsubscript{i}) $-$  > x in X; I(x) \par
+
+	\item \textit{selection} (D\textsubscript{i}) $-$  > x; x in X \par
+
+	\item \textit{feasibility} (x, D\textsubscript{p}) $-$  > boolean\par
+
+	\item \textit{solution} O(x,z) $``$maximal $``$; (D\textsubscript{p}) $-$  > boolean; z = D\textsubscript{p}, i.e., can no longer \\
+\ \ \ \ \ \ \ \ \ \ \ \ \  augment S with an x in X; \par
+
+	\item \textit{objective (}D\textsubscript{p}\textit{) -> }D\textsubscript{o }\textit{optimal assignment of all locations}
+\end{itemize}\par
+
+	\item imports:\  ADT( set, set-of-sets):D\textsubscript{i} D\textsubscript{p }D\textsubscript{o}; Boolean; integer
+\end{itemize}\par
+
+
+\vspace{\baselineskip}
+\setlength{\parskip}{0.0pt}
+\begin{adjustwidth}{0.0in}{-0.01in}
+\textbf{\textit{algorithm domain requirements speciﬁcation form:}}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.0in}{-0.01in}
+\textit{$\bullet$  name:  A$\ast$   (Di,  Do)}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.0in}{-0.01in}
+\textit{$\bullet$  domains:  Di\   is set-of-candidates,}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{1.05in}{-0.01in}
+\textit{Do are sets of solutions (solution space of subsets)}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.0in}{-0.01in}
+\textit{$\bullet$  operations:}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{1.05in}{-0.01in}
+\textit{I(x); x in Di; x is a possible candidate from input set}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{1.5in}{-0.01in}
+\textit{O(x, z); x in Di, z in Do; z is a satisfying solution\textbf{ }}\par
+
+\end{adjustwidth}
+
+
+\vspace{\baselineskip}
+\begin{adjustwidth}{0.0in}{-0.01in}
+\textbf{\textit{algorithm domain design speciﬁcation form:}}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.58in}{-0.01in}
+\textit{$\bullet$  name:  A$\ast$  (Di, Do)}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.72in}{0.04in}
+\textit{$\bullet$  domains:  Di\   is set-of-candidates, Do are the sets of solutions, Dp\   is set of partial solutions (one plane’s route and load)}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.58in}{-0.01in}
+\textit{$\bullet$  imports:  ADT set, list, queue, real/integer/character}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.58in}{-0.01in}
+\textit{$\bullet$  operations:}1\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.72in}{-0.01in}
+\textit{I(x); x in Di}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.72in}{-0.01in}
+\textit{O(x, z); x in Di, z in Do;}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.72in}{-0.01in}
+\textit{$``$condition on z being a satisfying solution$"$ }\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.72in}{-0.01in}
+\textit{I’(x, y); x in Di, y in Dp; condition on y being a partial solution in Dp}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.72in}{-0.01in}
+\textit{Dp is the $``$open$"$  list; Dc is the $"$ closed$"$  list}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.83in}{-0.01in}
+\textbf{–  }\textit{deﬁne state}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.83in}{-0.01in}
+\textbf{–  \textit{\textcolor[HTML]{FF0000}{next-state-generator}}}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.98in}{0.03in}
+\textit{i)  \textbf{\textcolor[HTML]{FF0000}{selection}} of a partial solution y in Dp based upon its superiority and put in Dc and delete from Dp}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.98in}{0.03in}
+\begin{justify}
+\textit{$``$based upon heuristic cost function$"$ }
+\end{justify}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{1.26in}{-0.01in}
+\textit{ii)  \textbf{\textcolor[HTML]{FF0000}{Generation}} of all} \textit{next states xj of y}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.83in}{-0.01in}
+\textbf{–  \textit{\textcolor[HTML]{FF0000}{feasibility}}}\textit{ (xj, y) $-$  > boolean [if true union (xj , y) and put result} \textit{in} \textit{Dp]}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.83in}{-0.01in}
+\textbf{–  \textit{\textcolor[HTML]{FF0000}{solution}}}\textit{ (y) $-$  > boolean;  z = y;  delay termination  and ﬁnd  all}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.98in}{0.61in}
+\begin{justify}
+\textit{$``$optimal$"$  solutions (if satisfying accept first solution)}
+\end{justify}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.83in}{-0.01in}
+\textbf{–  }\textit{objective solution (Dp) $-$  > $``$ordered set over Dp$"$ }\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.83in}{-0.01in}
+\textbf{–  \textit{\textcolor[HTML]{FF0000}{heuristics }}}\textit{come from problem domain insight:}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{1.26in}{-0.35in}
+\textbf{\textit{\textcolor[HTML]{0070C0}{-- Attempt use PD next state generator to reduce set-of candidates}}\textcolor[HTML]{0070C0}{ \textit{ASAP}}}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{1.26in}{0.04in}
+\textbf{\textit{\textcolor[HTML]{0070C0}{-- Attempt to generate a combination once and only once in combinatorial problem domain}}}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{1.26in}{0.66in}
+\textbf{\textit{\textcolor[HTML]{0070C0}{-- Attempt to generate early pruning condition simple solution check}}}\par
+
+\end{adjustwidth}
+
+
+\vspace{\baselineskip}
+\begin{adjustwidth}{0.0in}{-0.01in}
+\textbf{\textit{algorithm domain intermediate speciﬁcation form: (iterative)}}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.32in}{-0.01in}
+\textit{$\bullet$  Heuristics: distance to next airdrop location, value of load item added}\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.32in}{-0.01in}
+\textit{$\bullet$  Data structures: input – graph: set of nodes (locations), set of edge weight (cost between each location), set of items weight and value, set of planes with max weight; output – list of sets (route for each plane, and load for each plane)}\par
+
+\end{adjustwidth}
+
+
+\vspace{\baselineskip}
+\begin{adjustwidth}{0.0in}{-0.01in}
+\textbf{\textit{algorithm domain function speciﬁcation form:  (iterative)}}\par
+
+\end{adjustwidth}
+
+\textit{$\bullet$  }\  Function A$\ast$ (initial, Expand, Goal, Cost, Heuristic)\par
+
+\ \  q <- New-Priority-Queue()\par
+
+\ \  Insert (initial, q, Heuristic(initial))\par
+
+\ \  \textbf{while} q is not empty\par
+
+\ \ \ \ \ \  \textbf{do} current <- Extract-Min(q)\par
+
+\ \ \ \ \ \ \ \ \ \  \textbf{ if} Goal(current) then \textbf{return} solution\par
+
+\ \ \ \ \ \ \ \ \ \  \textbf{ for} each next in Expand(current)\par
+
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \textbf{do} Insert (next, q, Cost(next) + Heuristic(next))\par
+
+\ \ \ \  return failure\par
+
+\begin{Center}
+\textbf{References}
+\end{Center}\par
+
+[1] \href{https://en.wikipedia.org/wiki/Knapsack_problem#:~:text=The%20knapsack%20problem%20is%20a,is%20as%20large%20as%20possible.}{https://en.wikipedia.org/wiki/Knapsack\_problem}\par
+
+[2] \href{https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/}{https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/}\par
+
+[3] \href{https://medium.com/@fabianterh/how-to-solve-the-knapsack-problem-with-dynamic-programming-eb88c706d3cf}{https://medium.com/@fabianterh/how-to-solve-the-knapsack-problem-with-dynamic-programming-eb88c706d3cf}\par
+
+[4] \href{https://en.wikipedia.org/wiki/Vehicle_routing_problem}{https://en.wikipedia.org/wiki/Vehicle\_routing\_problem}\par
+
+[5] \href{https://developers.google.com/optimization/routing/vrp}{https://developers.google.com/optimization/routing/vrp}\par
+
+[6] \href{https://bib.irb.hr/datoteka/433524.Vehnicle_Routing_Problem.pdf}{https://bib.irb.hr/datoteka/433524.Vehnicle\_Routing\_Problem.pdf}\par
+
+
+\printbibliography
+\end{document}
